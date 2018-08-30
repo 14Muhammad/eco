@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    background-color: #faf7fb;
+}
+
+.main_wrapper {
+    width: 1000px;
+    height: auto;
+    margin: auto;
+    background-color: black;
+}
+
+.header_wrapper{
+    width: 1000px;
+    height: 150px;
+    margin: auto;
+}
+
+#logo {
+    height: 150px;
+    width: 200px;
+    float: left;
+}
+
+#banner {
+    height: 150px;
+    width: 800px;
+    float: right;
+}
+
+.menubar {
+    width: 1000px;
+    height: 50px;
+    background-color: gray;
+    color: white;
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    float: left;
+}
+
+#form {
+    float: right;
+    line-height: 50px;
+    padding: 0 8px 0 8px;
+}
+
+#menu li {
+    list-style: none;
+    display: inline;
+
+}
+#menu a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    font-size: 18px;
+    font-family: "Comic Sans MS";
+}
+
+#menu a:hover{
+    color: orange;
+    font-weight: bolder;
+}
+.content_wrapper {
+    width: 1000px;
+    margin: auto;
+    background-color: pink;
+}
+
+#content_area {
+    width: 800px;
+    float: right;
+    background-color: pink;
+}
+
+#sidebar {
+    width: 200px;
+    background-color: black;
+    float: left;
+    color: white;
+}
+.sidebar_title {
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-family: "Arial";
+    padding: 10px;
+    text-align: center;
+}
+
+.cats {
+    text-align: center;
+}
+
+.cats li {
+    list-style: none;
+    display: block;
+    margin: 5px;
+}
+.cats a {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    text-decoration: none;
+}
+
+.cats a:hover {
+    color: orange;
+    font-weight: bolder;
+    text-decoration: underline ;
+}
+
+.products_box {
+    width: 780px;
+    text-align: center;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.single_product {
+    float: left;
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.single_product img {
+    border: 2px solid black;
+}
+
+.shopping_cart {
+    width: 800px;
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+
+#footer {
+    width: 1000px;
+    height: 100px;
+    background-color: gray;
+    clear:both;
+}
+
+#footer > h2 {
+    text-align: center;
+    padding-top: 40px;
+    color: black;
+}
+
+
