@@ -98,7 +98,11 @@ require "functions/functions.php";
                     }else
                     if(isset($_GET['change_pass'])){
                         include ('change_pass.php');
+                    }else
+                    if(isset($_GET['del_account'])){
+                        include ('del_account.php');
                     }
+
                 ?>
 
 
