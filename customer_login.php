@@ -17,7 +17,7 @@ if(isset($_POST['login']))
     $check_cart = mysqli_num_rows($run_cart);
     if($check_c > 0 && $check_cart ==0){
         $_SESSION['customer_email'] = $c_email;
-        header('location: customer/my_account.php');
+        header('location: my_account.php');
     }else{
         echo "here2";
         $_SESSION['customer_email'] = $c_email;

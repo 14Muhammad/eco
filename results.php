@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+session_start();
 require "functions/functions.php";
 ?>
 <html lang="en">
@@ -18,7 +19,7 @@ require "functions/functions.php";
             <ul id="menu">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="all_products.php">All Products</a></li>
-                <li><a href="customer/account.php">My Account</a></li>
+                <li><a href="customer/my_account.php">My Account</a></li>
                 <li><a href="#">Sign Up</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -43,14 +44,30 @@ require "functions/functions.php";
             </div>
             <div id="content_area">
                 <div class="shopping_cart">
+                    <?php cart(); ?>
                     <span style="float: right;
                     font-size: 18px; padding: 5px;line-height: 40px;">
-                        Welcome guest! <b style="color: yellow">
+                        <?php
+                        if(!isset($_SESSION['customer_email']))
+                            echo "Welcome guest!";
+                        else
+                            echo "Welcome ".$_SESSION['customer_email'];
+                        ?>
+                        <b style="color: yellow">
                             Shopping Cart - </b>
-                        Total Items: Total Price:
+                        Total Items: <?php total_items(); ?>
+                        Total Price: <?php total_price(); ?>
                         <a style="color: yellow" href="cart.php">Go to Cart</a>
-                    </span>
 
+                        <?php
+                        if(!isset($_SESSION['customer_email'])){
+                            echo "<a style='color: orange;' href='checkout.php'>Login</a>";
+                        }
+                        else{
+                            echo "<a style='color: orange;' href='logout.php'>Logout</a>";
+                        }
+                        ?>
+                    </span>
                 </div>
                 <div class="products_box">
                     <?php getPro(); ?>
