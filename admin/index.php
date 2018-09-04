@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <title>E-commerce Admin Panel</title>
+        <title>Admin Panel</title>
     </head>
     <body>
         <div class="wrapper">
