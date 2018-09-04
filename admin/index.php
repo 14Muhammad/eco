@@ -29,16 +29,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?insert_category">Insert New Category</a>
+                        <a href="insert_category.php">Insert New Category</a>
                     </li>
                     <li>
-                        <a href="index.php?view_categories">View All Categories</a>
+                        <a href="view_categories.php">View All Categories</a>
                     </li>
                     <li>
-                        <a href="index.php?insert_brand">Insert New Brand</a>
+                        <a href="insert_brand.php">Insert New Brand</a>
                     </li>
                     <li>
-                        <a href="index.php?view_brands">View All Brands</a>
+                        <a href="view_brands.php">View All Brands</a>
                     </li>
                     <li>
                         <a href="index.php?view_customers">View Customers</a>

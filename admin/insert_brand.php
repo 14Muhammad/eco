@@ -6,7 +6,7 @@
  * Time: 12:35 PM
  */
 ?>
-<form action="" method="post" style="padding:80px;">
+<form action="" method="post" style="padding: 140px; background-color: steelblue; ">
 
 <b>Insert New Bran:</b>
 <input type="text" name="new_brand" required/>
