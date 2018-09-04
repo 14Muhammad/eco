@@ -1,3 +1,6 @@
+<?php
+include ('functions/db_connect.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -63,11 +66,13 @@
                         </button>
                     </div>
                 </nav>
+                <div class="container">
                 <?php
                     if(isset($_GET['view_categories'])){
                         include ('view_categories.php');
                     }
                 ?>
+                </div>
             </div>
         </div>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
