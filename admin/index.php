@@ -44,7 +44,7 @@
                         <a href="view_customers.php">View Customers</a>
                     </li>
                     <li>
-                        <a href="index.php?view_orders">View Orders</a>
+                        <a href="view_orders.php">View Orders</a>
                     </li>
                     <li>
                         <a href="index.php?view_payments">View Payments</a>
