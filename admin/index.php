@@ -63,6 +63,11 @@
                         </button>
                     </div>
                 </nav>
+                <?php
+                    if(isset($_GET['view_categories'])){
+                        include ('view_categories.php');
+                    }
+                ?>
             </div>
         </div>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
