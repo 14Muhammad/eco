@@ -15,6 +15,7 @@
         <h3 class="m-3">Admin Login </h3>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="verify Password" required>
         <button class="btn btn-lg btn-primary mt-3" type="submit">Sign in</button>
     </form>
 <script src="assets/js/jquery-3.3.1.min.js"></script>
