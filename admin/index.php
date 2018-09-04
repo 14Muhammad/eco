@@ -41,7 +41,7 @@
                         <a href="view_brands.php">View All Brands</a>
                     </li>
                     <li>
-                        <a href="index.php?view_customers">View Customers</a>
+                        <a href="view_customers.php">View Customers</a>
                     </li>
                     <li>
                         <a href="index.php?view_orders">View Orders</a>

@@ -7,7 +7,7 @@
  */
 ?>
 
-<table>
+<table align="center">
 
     <td colspan="10"><h2>View All Brands Here</h2></td>
 
