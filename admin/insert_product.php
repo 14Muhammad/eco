@@ -4,8 +4,7 @@ require "../includes/db_connetion.php";
 <html>
     <head>
         <title> Inserting Product</title>
-        <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-        <script>tinymce.init({ selector:'textarea' });</script>-->
+
     </head>
     <body>
         <form action="insert_product.php" method="post" enctype="multipart/form-data">
