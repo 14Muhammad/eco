@@ -1,4 +1,4 @@
-<h1> Cutomers Data</h1>
+<h1>Cutomers</h1>
 <table class="table table-bordered">
     <div class="table responsive">
         <thead>
