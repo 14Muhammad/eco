@@ -71,7 +71,13 @@ include ('functions/db_connect.php')
                     if(isset($_GET['view_categories'])){
                         include ('view_categories.php');
                     }
-                ?>
+                    else if(isset($_GET['view_customers'])){
+                        include ('view_customers.php');
+                    }
+                    else if(isset($_GET['view_brands'])) {
+                        include('view_brands.php');
+                    }
+                    ?>
                 </div>
             </div>
         </div>
