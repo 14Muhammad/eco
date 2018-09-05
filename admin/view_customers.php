@@ -1,4 +1,4 @@
-<h1>Cutomers</h1>
+<h1>Customers</h1>
 <table class="table table-bordered">
     <div class="table responsive">
         <thead>
