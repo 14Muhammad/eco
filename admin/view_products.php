@@ -1,5 +1,5 @@
-    <table width="795" align="center" bgcolor="#fffaf0">
-
+//there is issue that our page run as view_product.php
+<table width="795" align="center" bgcolor="#fffaf0">
 
         <tr align="center">
             <td colspan="6"><h2>View All Products Here</h2></td>
