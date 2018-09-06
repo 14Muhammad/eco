@@ -33,22 +33,22 @@ include ('functions/db_connect.php')
                         </a>
                     </li>
                     <li>
-                        <a href="insert_category.php">Insert New Category</a>
+                        <a href="index.php?insert_category">Insert New Category</a>
                     </li>
                     <li>
-                        <a href="view_categories.php">View All Categories</a>
+                        <a href="index.php?view_categories">View All Categories</a>
                     </li>
                     <li>
-                        <a href="insert_brand.php">Insert New Brand</a>
+                        <a href="index.php?insert_brand">Insert New Brand</a>
                     </li>
                     <li>
-                        <a href="view_brands.php">View All Brands</a>
+                        <a href="index.php?view_brands">View All Brands</a>
                     </li>
                     <li>
-                        <a href="view_customers.php">View Customers</a>
+                        <a href="index.php?view_customers">View Customers</a>
                     </li>
                     <li>
-                        <a href="view_orders.php">View Orders</a>
+                        <a href="index.php?view_orders">View Orders</a>
                     </li>
                     <li>
                         <a href="index.php?view_payments">View Payments</a>
@@ -67,20 +67,17 @@ include ('functions/db_connect.php')
                     </div>
                 </nav>
                 <div class="container">
-                    <?php
-                        if(isset($_GET['insert_product'])){
-                            include ('insert_product.php');
-                        }
-                        else if(isset($_GET['view_categories'])){
-                            include ('view_categories.php');
-                        }
-                        else if(isset($_GET['view_customers'])){
-                            include ('view_customers.php');
-                        }
-                        else if(isset($_GET['view_brands'])) {
-                            include('view_brands.php');
-                        }
-                        ?>
+                <?php
+                    if(isset($_GET['view_categories'])){
+                        include ('view_categories.php');
+                    }
+                    else if(isset($_GET['view_customers'])){
+                        include ('view_customers.php');
+                    }
+                    else if(isset($_GET['view_brands'])) {
+                        include('view_brands.php');
+                    }
+                    ?>
                 </div>
             </div>
         </div>
