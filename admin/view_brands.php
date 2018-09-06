@@ -1,23 +1,12 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Fahad Ali
- * Date: 9/4/2018
- * Time: 6:58 PM
- */
-?>
-
-<table align="center">
-
-    <td colspan="10"><h2>View All Brands Here</h2></td>
-
-    <tr align="center" bgcolor="#deb887">
-        <th style="width: 150px;padding: 8px;">Brand Id</th>
-        <th style="width: 150px;padding: 8px;">Brand Name</th>
-        <th style="width: 150px;padding: 8px;">Edit</th>
-        <th style="width: 150px;padding: 8px;">Delete</th>
-    </tr>
-
-
-
-</table>
+<h1> Brands </h1>
+<ul class="list-group">
+    <?php
+    $get_brands = "select * from brands";
+    $run_brands = mysqli_query($con, $get_brands);
+    while ($row_brands= mysqli_fetch_array($run_brands)){
+        $brand_id = $row_brands['brand_id'];
+        $brand_title = $row_brands['brand_title'];
+        echo "<li class='list-group-item'>$brand_title</li>";
+    }
+    ?>
+</ul>

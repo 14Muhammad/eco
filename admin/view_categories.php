@@ -1,22 +1,12 @@
+<h1> Categories </h1>
+<ul class="list-group">
 <?php
-/**
- * Created by PhpStorm.
- * User: Fahad Ali
- * Date: 9/4/2018
- * Time: 6:46 PM
- */
+$get_cats = "select * from categories";
+$run_cats = mysqli_query($con, $get_cats);
+while ($row_cats= mysqli_fetch_array($run_cats)){
+    $cat_id = $row_cats['cat_id'];
+    $cat_title = $row_cats['cat_title'];
+    echo "<li class='list-group-item'>$cat_title</li>";
+}
 ?>
-
-<table align="center">
-    <td colspan="6"><h2>View All Categories Here</h2></td>
-
-    <tr align="center" bgcolor="#deb887">
-        <th style="width: 150px;padding: 8px;">categories title</th>
-        <th style="width: 150px;padding: 8px;">categories id</th>
-        <th style="width: 150px;padding: 8px;">Edit</th>
-        <th style="width: 150px;padding: 8px;">Delete</th>
-
-    </tr>
-
-
-</table>
+</ul>
