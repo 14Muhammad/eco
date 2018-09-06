@@ -14,6 +14,7 @@ while($row_col=mysqli_fetch_array($run))
     ?>
 
             <tr>
+
                     <td > <?php echo $pro_title ?></td>
                     <td> <?php echo $pro_price ?></td>
                     <td > <?php echo $pro_desc ?></td>
