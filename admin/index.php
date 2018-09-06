@@ -33,7 +33,7 @@ include ('functions/db_connect.php')
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?insert_category">Insert New Category</a>
+                        <a href="index.php?insert_categories">Insert New Category</a>
                     </li>
                     <li>
                         <a href="index.php?view_categories">View All Categories</a>
@@ -85,6 +85,9 @@ include ('functions/db_connect.php')
                         }
                         else  if(isset($_GET['insert_brand'])){
                             include ('insert_brand.php');
+                        }
+                        else  if(isset($_GET['insert_categories'])){
+                            include ('insert_categories.php');
                         }
                         ?>
                 </div>
