@@ -90,3 +90,7 @@ a, a:hover, a:focus {
     color: #fff;
     background: #6d7fcc;
 }
+
+#content {
+    width: 100%;
+}
