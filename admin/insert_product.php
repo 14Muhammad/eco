@@ -6,6 +6,7 @@ require "../includes/db_connetion.php";
         <title> Inserting Product</title>
 
     </head>
+    <h2>farast</h2>
     <body>
         <form action="insert_product.php" method="post" enctype="multipart/form-data">
             <table align="center" width="750" border="2" bgcolor="orange">
