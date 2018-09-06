@@ -19,7 +19,6 @@ while($row_col=mysqli_fetch_array($run))
                     <td > <?php echo $pro_desc ?></td>
                     <td> <img src="product_images/<?php echo $pro_image ?>" width="120px" height="80px"> </td>
                     <td> <?php echo $pro_keywords ?></td>
-
             </tr>
 
 
