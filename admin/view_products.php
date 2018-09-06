@@ -15,13 +15,9 @@
         </tr>
         <?php
         include("functions/db_connect.php");
-
         $get_pro = "select * from products";
-
         $run_pro = mysqli_query($con, $get_pro);
-
         $i = 0;
-
         while ($row_pro=mysqli_fetch_array($run_pro))
         {
             $pro_id = $row_pro['pro_id'];
@@ -29,7 +25,6 @@
             $pro_image = $row_pro['pro_image'];
             $pro_price = $row_pro['pro_price'];
             $i++;
-
             ?>
             <tr align="center">
                 <td><?php echo $i;?></td>
