@@ -1,82 +1,82 @@
-<?php
-require "../includes/db_connetion.php";
-?>
-<html>
-    <head>
-        <title> Inserting Product</title>
-
-    </head>
-    <h2>farast</h2>
-    <body>
-        <form action="insert_product.php" method="post" enctype="multipart/form-data">
-            <table align="center" width="750" border="2" bgcolor="orange">
-                <tr align="center">
-                    <td colspan="2"><h2>Insert New Product here</h2></td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Title: </b></td>
-                    <td><input type="text" name="pro_title" size="60" required></td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Category: </b></td>
-                    <td>
-                        <select name="pro_cat" required>
-                            <option>Select a Category</option>
-                            <?php
-                            $get_cats = "select * from categories";
-                            $run_cats = mysqli_query($con, $get_cats);
-                            while ($row_cats= mysqli_fetch_array($run_cats)){
-                                $cat_id = $row_cats['cat_id'];
-                                $cat_title = $row_cats['cat_title'];
-                                echo "<option value='$cat_id'>$cat_title </option>";
-                            }
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Brand: </b></td>
-                    <td>
-                        <select name="pro_brand" required>
-                            <option>Select a Brand</option>
-                            <?php
-                            $get_brands = "select * from brands";
-                            $run_brands = mysqli_query($con, $get_brands);
-                            while ($row_brands= mysqli_fetch_array($run_brands)){
-                                $brand_id = $row_brands['brand_id'];
-                                $brand_title = $row_brands['brand_title'];
-                                echo "<option value='$brand_id'>$brand_title </option>";
-                            }
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Image: </b></td>
-                    <td><input type="file" name="pro_image" required></td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Price: </b></td>
-                    <td><input type="text" name="pro_price" required></td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Description: </b></td>
-                    <td><textarea name="pro_desc" cols="40" rows="10"></textarea></td>
-                </tr>
-                <tr>
-                    <td align="right"><b> Product Keywords: </b></td>
-                    <td><input type="text" name="pro_keywords" size="50" required></td>
-                </tr>
-                <tr align="center">
-                    <td colspan="2"><input type="submit" name="insert_post" value="Insert Product Now"></td>
-                </tr>
-
-            </table>
-
+<div class="row">
+    <div class="offset-md-2 col-md-8">
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <h2 class="offset-lg-3 offset-md-2 offset-1 "> Insert New Product </h2>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">Product Title</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_cat">Product Category</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <select name="pro_cat" id="pro_cat" required class="form-control">
+                        <option>Select Category</option>
+                        <?php
+                        $get_cats = "select * from categories";
+                        $run_cats = mysqli_query($con, $get_cats);
+                        while ($row_cats= mysqli_fetch_array($run_cats)){
+                            $cat_id = $row_cats['cat_id'];
+                            $cat_title = $row_cats['cat_title'];
+                            echo "<option value='$cat_id'>$cat_title </option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3  d-none d-sm-block" for="pro_brand">Product Brand</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <select name="pro_brand" id="pro_brand" required class="form-control">
+                        <option>Select Brand</option>
+                        <?php
+                        $get_brands = "select * from brands";
+                        $run_brands = mysqli_query($con, $get_brands);
+                        while ($row_brands= mysqli_fetch_array($run_brands)){
+                            $brand_id = $row_brands['brand_id'];
+                            $brand_title = $row_brands['brand_title'];
+                            echo "<option value='$brand_id'>$brand_title </option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_image">Product Image</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <input class="form-control-file" type="file" id="pro_image" name="pro_image">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_price">Product Price</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_desc">Product Description</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <textarea class="form-control"  name="pro_desc" id="pro_desc" rows="4" placeholder="Product Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_keywords">Product Keywords</label>
+                <div class="col-12 col-sm-8 col-lg-9">
+                    <input class="form-control" type="text" id="pro_keywords" name="pro_keywords" placeholder="Product Keywords">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-3 col-12 col-sm-6">
+                    <input class="btn btn-block btn-primary btn-lg" type="submit" id="insert_post" name="insert_post"
+                           value="Insert Product Now">
+                </div>
+            </div>
         </form>
-    </body>
-</html>
-
+    </div>
+</div>
 <?php
 if(isset($_POST['insert_post'])){
     //getting text data from the fields
