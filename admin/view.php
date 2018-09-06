@@ -24,12 +24,12 @@ $pro_price = $row_pro['pro_price'];
 $pro_image = $row_pro['pro_image'];
 echo"<td>
                      
-                      <td>$pro_title</td>
+                    <tr>  <td>$pro_title</td>
                      
  
                      <td><img src='product_images/$pro_image' width='100px' height='100px'></td>
                   
-                      <td>$pro_price</td><br>
+                      <td>$pro_price</td><br></tr>
                   </td>";
     }
     ?>
