@@ -5,9 +5,9 @@
                 <h2 class="offset-lg-3 offset-md-2 offset-1 "> Insert New Brand </h2>
             </div>
             <div class="form-group row">
-                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">brand Title</label>
+                <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="brand_title">brand Title</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title">
+                    <input class="form-control" type="text" id="brand_title" name="brand_title" placeholder="Title">
                 </div>
             </div>
             <div class="form-group row">
