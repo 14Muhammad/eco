@@ -1,8 +1,8 @@
-<div class="row">
-    <div class="offset-md-2 col-md-8">
-        <form action="" method="post" enctype="multipart/form-data">
+<div class="row" >
+    <div class="offset-md-2 col-md-8 table table-warning table-hover ">
+        <form action="" method="post" enctype="multipart/form-data" class="Jumbotron text-center">
             <div class="form-group row">
-                <h2 class="offset-lg-3 offset-md-2 offset-1 "> Insert New Product </h2>
+                <h2 class="offset-lg-3 offset-md-2 offset-1  text-center " style=" padding-left:75px"> Insert New Product </h2>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">Product Title</label>
@@ -77,6 +77,18 @@
         </form>
     </div>
 </div>
+
+<br><br>
+<footer class="bg-warning text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                This is footer powered by <kbd>Farasat Ali Aziz</kbd>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <?php
 if(isset($_POST['insert_post'])){
     //getting text data from the fields

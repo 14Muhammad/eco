@@ -1,5 +1,5 @@
-<h1>Customers</h1>
-<table class="table table-bordered">
+<h1 class=" jumbotron text-info text-center">Customers</h1>
+<table class="table table-bordered-success table-striped table-dark table-hover">
     <div class="table responsive">
         <thead>
             <tr>

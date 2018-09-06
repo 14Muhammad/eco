@@ -80,6 +80,19 @@ include ('functions/db_connect.php')
                         else if(isset($_GET['view_brands'])) {
                             include('view_brands.php');
                         }
+                        else if(isset($_GET['insert_category'])) {
+                            include('insert_category.php');
+                        }
+                        else if(isset($_GET['insert_brand'])) {
+                            include('insert_brand.php');
+                        }
+                        else if(isset($_GET['view_products'])) {
+                            include('view_products.php');
+                        }
+                        else if(isset($_GET['view_orders'])) {
+                            include('view_orders.php');
+                        }
+
                         ?>
                 </div>
             </div>
@@ -95,5 +108,10 @@ include ('functions/db_connect.php')
 
             });
         </script>
+
+
+
+
+
     </body>
 </html>
