@@ -10,7 +10,7 @@ require "../includes/db_connetion.php";
         <form action="insert_product.php" method="post" enctype="multipart/form-data">
             <table align="center" width="750" border="2" bgcolor="orange">
                 <tr align="center">
-                    <td colspan="2"><h2>Insert New Product here</h2></td>
+                   echo <td colspan="2"><h2>Insert New Product here</h2></td>
                 </tr>
                 <tr>
                     <td align="right"><b> Product Title: </b></td>
