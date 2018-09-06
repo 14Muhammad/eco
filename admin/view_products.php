@@ -12,7 +12,7 @@ while($row_col=mysqli_fetch_array($run))
     $pro_image=$row_col['pro_image'];
     $pro_keywords=$row_col['pro_keywords'];
     ?>
-        
+
             <tr>
                     <td > <?php echo $pro_title ?></td>
                     <td> <?php echo $pro_price ?></td>
