@@ -1,19 +1,32 @@
-<h2>Insert New Brand</h2>
-<form action="" method="post"  >
-    <input type="text" name="new_brand" size="60" required>
-    <input type="submit" name="insert_brand" value="Insert Brands">
+<br><br>
+<form action="" method="post" enctype="multipart/form-data">
+
+    <h2 class="offset-lg-3 offset-md-2 offset-sm-1 "> Insert New Brands </h2>
+
+    <div class="offset-sm-3 col-12 col-sm-6">
+
+        <input class="input-group" type="text"  name="brand" id="brands" placeholder="Enter Brand"
+               required pattern="([A-Za-z]{3,}|([A-Za-z]{1,}\s?[A-Za-z]{1,})+)">
+    </div>
+    <br>
+    <div class="offset-sm-3 col-12 col-sm-6">
+        <input class="btn btn-block btn-primary " type="submit" name="insert_brand"
+               value="Insert Brand">
+    </div>
+
 </form>
+
+<br>
 <?php
 if(isset($_POST['insert_brand'])){
     //getting text data from the fields
-    $new_brand = $_POST['new_brand'];
+    $new_brand = $_POST['brand'];
 
-    $insert_brands = "insert into brands (brand_title) 
+    $insert_brand = "insert into brands (brand_title) 
                   VALUES ('$new_brand');";
-    $insert_brands = mysqli_query($con, $insert_brands);
-    if($insert_brands){
-        //header("location: ".$_SERVER['PHP_SELF']);
-        echo" Brand Successfuly inserted";
-    }
+    $insert_brand = mysqli_query($con, $insert_brand);
+
+
+    header('location: index.php?view_brands');
 }
 ?>
