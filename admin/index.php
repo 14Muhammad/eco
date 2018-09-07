@@ -80,6 +80,9 @@ include ('functions/db_connect.php')
                         else if(isset($_GET['view_brands'])) {
                             include('view_brands.php');
                         }
+                        else if(isset($_GET['view_products'])) {
+                            include('view_products.php');
+                        }
                         ?>
                 </div>
             </div>
