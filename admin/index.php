@@ -1,3 +1,6 @@
+<?php
+include ('functions/db_connect.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,6 +13,13 @@
         <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <title>E-commerce Admin Panel</title>
+        <title>Admin Panel</title>
+        <style type="text/css">
+            input[id="pro_price"]:invalid
+            {
+                background-color: red;
+            }
+        </style>
     </head>
     <body>
         <div class="wrapper">
@@ -62,6 +72,25 @@
                         </button>
                     </div>
                 </nav>
+                <div class="container">
+                <?php
+                    if(isset($_GET['view_categories'])){
+                        include ('view_categories.php');
+                    }
+                    else if(isset($_GET['view_customers'])){
+                        include ('view_customers.php');
+                    }
+                    else if(isset($_GET['view_brands'])) {
+                        include('view_brands.php');
+                    }
+                    else if (isset($_GET['view_products'])) {
+                        include('view_products.php');
+                    }
+                    else if (isset($_GET['insert_product'])) {
+                        include('insert_product.php');
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     <script src="assets/js/jquery-3.3.1.min.js"></script>
