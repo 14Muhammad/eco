@@ -86,6 +86,9 @@ include ('functions/db_connect.php')
                         else if(isset($_GET['insert_brand'])) {
                             include('insert_brand.php');
                         }
+                        else if(isset($_GET['view_products'])) {
+                            include('view_products.php');
+                        }
                         ?>
                 </div>
             </div>
