@@ -118,6 +118,9 @@ include ('functions/db_connect.php')
                         else if(isset($_GET['view_customers'])){
                             include ('view_customers.php');
                         }
+                        else if(isset($_GET['del_customer'])){
+                            include ('del_customer.php');
+                        }
 
 
                         ?>
