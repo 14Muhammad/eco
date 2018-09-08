@@ -71,6 +71,15 @@ include ('functions/db_connect.php')
                         if(isset($_GET['insert_product'])){
                             include ('insert_product.php');
                         }
+                        else if(isset($_GET['view_products'])){
+                            include ('view_products.php');
+                        }
+                        else if(isset($_GET['edit_pro'])){
+                            include ('edit_pro.php');
+                        }
+                        else if(isset($_GET['del_pro'])){
+                            include ('del_pro.php');
+                        }
                         else if(isset($_GET['view_categories'])){
                             include ('view_categories.php');
                         }
