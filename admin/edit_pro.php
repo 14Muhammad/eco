@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
 if(isset($_GET['edit_pro'])){
     $get_id = $_GET['edit_pro'];
     $get_pro = "select * from products where pro_id='$get_id'";

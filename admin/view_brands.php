@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
+?>
 <div class="row">
     <div class="col-sm-12">
         <h1>Brands</h1>
