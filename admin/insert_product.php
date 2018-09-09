@@ -88,9 +88,9 @@ if(isset($_POST['insert_post'])){
     $pro_keywords = $_POST['pro_keywords'];
     //getting image from the field
     $pro_image = $_FILES['pro_image']['name'];
-    $pro_image_temp = $_FILES['pro_image']['tmp_name'];
+    $pro_image_tmp = $_FILES['pro_image']['tmp_name'];
 
-    move_uploaded_file($pro_image_temp,"product_images/$pro_image");
+    move_uploaded_file($pro_image_tmp,"product_images/$pro_image");
 
     $insert_product = "insert into products (pro_cat, pro_brand,pro_title,pro_price,pro_desc,pro_image,pro_keywords) 
                   VALUES ('$pro_cat','$pro_brand','$pro_title','$pro_price','$pro_desc','$pro_image','$pro_keywords');";
