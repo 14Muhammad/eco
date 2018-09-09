@@ -121,6 +121,9 @@ include ('functions/db_connect.php')
                         else if(isset($_GET['del_customer'])){
                             include ('del_customer.php');
                         }
+                        else if(isset($_GET['view_orders'])){
+                            include ('view_orders.php');
+                        }
 
 
                         ?>
