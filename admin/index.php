@@ -1,6 +1,9 @@
 <?php
 include ('functions/db_connect.php')
 ?>
+<?php
+include ('functions/functions.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -95,6 +98,10 @@ include ('functions/db_connect.php')
                     else if (isset($_GET['insert_brand'])) {
                         include('insert_brand.php');
                     }
+                    else if(isset($_GET['view_orders'])){
+                        include ('view_orders.php');
+                    }
+       
                     ?>
                 </div>
             </div>
