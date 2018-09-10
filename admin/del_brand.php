@@ -7,3 +7,4 @@ if(isset($_GET['del_brand'])){
         header('location: index.php?view_brands');
     }
 }
+

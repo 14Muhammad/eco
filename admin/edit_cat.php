@@ -38,5 +38,7 @@ if(isset($_POST['update_cat'])){
                 </div>
             </div>
         </form>
+
+        
     </div>
 </div>
