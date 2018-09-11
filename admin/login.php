@@ -8,12 +8,18 @@ if(isset($_POST['login'])){
     $sel_user = "select * from admins where user_email='$email' AND user_pass='$pass'";
     $run_user = mysqli_query($con, $sel_user);
     $check_user = mysqli_num_rows($run_user);
-    echo "<h1>$check_user</h1>";
     if($check_user==0){
         $error_msg = 'Password or Email is wrong, try again';
     }
     else{
         $_SESSION['user_email'] = $email;
+        if(!empty($_POST['remember'])) {
+            setcookie('user_email', $email, time() + (10 * 365 * 24 * 60 * 60));
+            setcookie('user_pass', $pass, time() + (10 * 365 * 24 * 60 * 60));
+        } else {
+            setcookie('user_email','' );
+            setcookie('user_pass', '');
+        }
         header('location:index.php?logged_in=You have successfully logged in!');
     }
 }
@@ -36,8 +42,14 @@ if(isset($_POST['login'])){
         <h2 class="text-primary"><?php echo @$_GET['logged_out']?></h2>
         <h3 class="m-3">Admin Login </h3>
         <div><?php echo $error_msg;?></div>
-        <input type="text" id="user_email" name="user_email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" id="user_pass" name="user_pass" class="form-control" placeholder="Password" required>
+        <input type="text" id="user_email" name="user_email"
+               value="<?php echo @$_COOKIE['user_email']?>" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="user_pass" name="user_pass"
+               value="<?php echo @$_COOKIE['user_pass']?>" class="form-control" placeholder="Password" required><br>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="remember" name="remember">
+            <label class="form-check-label" for="remember">Remember me</label>
+        </div>
         <input class="btn btn-lg btn-primary mt-3" type="submit" name="login" value="Sign in">
     </form>
 <script src="assets/js/jquery-3.3.1.min.js"></script>
