@@ -1,18 +1,18 @@
-<div class="offset-md-2 col-md-8">
+<div class="container">
     <h2 class="offset-lg-3 offset-md-2 offset-1 "> Products </h2>
-    <table class="table table-bordered">
-        <div class="table responsive">
+    <table class="table table-responsive">
             <thead>
             <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th >Description</th>
-                <th>Image</th>
-                <th >Key words</th>
-                <th >Delete</th>
+                <th class=' col-md-1 col-lg-1'>Title</th>
+                <th class=' col-md-1 col-lg-1'>Price</th>
+                <th class=' col-md-1 col-lg-1'>Image</th>
+                <th d-sm-none col-md-4 col-lg-4>Description</th>
+                <th class=' col-md-1 col-lg-1'>Key words</th>
+                <th class=' col-md-4 col-lg-4'>Delete</th>
             </tr>
             </thead>
             <tbody>
+
             <?php
             $get_products = "select * from products";
             $run_products = mysqli_query($con, $get_products);
@@ -25,17 +25,23 @@
                 $pro_desc = $row_products['pro_desc'];
                 $pro_image = $row_products['pro_image'];
                 $pro_keywords = $row_products['pro_keywords'];
+
                 echo "<tr>
-                      <td>$pro_title</td>
-                      <td>$pro_price</td>
-                      <td>$pro_desc</td>
-                      <td><img src='product_images/$pro_image' width='50px' height='50px'></td>
-                      <td>$pro_keywords</td>
-                     <td> <a type='button' class='btn btn-outline-danger' href='delete.php?del=$pro_id'>Delete</a></td>
+                      <div class='row'>
+                      <td class=' col-md-1 col-lg-1'>$pro_title</td> 
+                      <td class=' col-md-1 col-lg-1'>$pro_price</td>
+                      <td class=' col-md-1 col-lg-1'><img src='product_images/$pro_image' width='50px' height='50px'></td>
+                      <td class='d-sm-none col-md-4 col-lg-4'>$pro_desc</td>
+                      <td class=' col-md-1 col-lg-1'>$pro_keywords</td>
+                      <td class=' col-md-4 col-lg-4'> <a type='button' class='btn btn-danger' href='delete.php?del=$pro_id'>
+                      <i class='fa fa-trash-alt'></i> Delete</a></td>
+                       </div>     
+                      
                   </tr>";
+
             }
             ?>
+
             </tbody>
-        </div>
     </table>
 </div>

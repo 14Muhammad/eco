@@ -7,6 +7,7 @@ if(isset($_GET['del'])){
     $run_del = mysqli_query($con,$del_pro);
     if( $run_del>0){
         echo" Successfully deleted ";
+
     }
 }
 ?>

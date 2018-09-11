@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2018 at 02:45 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Sep 11, 2018 at 01:14 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `store_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `user_email` varchar(30) NOT NULL,
+  `user_pass` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `user_email`, `user_pass`) VALUES
+(2, 'ali@ucp', '123');
 
 -- --------------------------------------------------------
 
@@ -64,9 +81,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
-(6, '::1', 4),
-(13, '::1', 1),
-(15, '::1', 1);
+(13, '::1', 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +106,6 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (5, 'tablets'),
 (6, 'iPads'),
 (7, 'Watches');
-
 -- --------------------------------------------------------
 
 --
@@ -150,10 +164,15 @@ INSERT INTO `products` (`pro_id`, `pro_cat`, `pro_brand`, `pro_title`, `pro_pric
 (15, 1, 8, 'Toshiba LAPTOP I3', 15000, '<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">\r\n<li style=\"box-sizing: border-box;\">4 GB Ram</li>\r\n<li style=\"box-sizing: border-box;\">250 GB HardDisk</li>\r\n<li style=\"box-sizing: border-box;\">HIgh Graphics 15.6 Inch Led</li>\r\n<li style=\"box-sizing: border-box;\">Intel Built in Graphic Card</li>\r\n<li style=\"box-sizing: border-box;\">Intel Core i3 Processor</li>\r\n<li style=\"box-sizing: border-box;\">Plain Box</li>\r\n</ul>', 'toshiba.jpg', 'Toshiba LAPTOP I3 1st GENERATION HIGH GRAPHICS GAMING BRANDED LAPTOP NOTEBOOK- 15.6 HD LED REFURBISHED LAPTOP'),
 (16, 2, 5, 'Sony Alpha a58', 59000, '<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">\r\n<li style=\"box-sizing: border-box;\">4 GB Ram</li>\r\n<li style=\"box-sizing: border-box;\">250 GB HardDisk</li>\r\n<li style=\"box-sizing: border-box;\">HIgh Graphics 15.6 Inch Led</li>\r\n<li style=\"box-sizing: border-box;\">Intel Built in Graphic Card</li>\r\n<li style=\"box-sizing: border-box;\">Intel Core i3 Processor</li>\r\n<li style=\"box-sizing: border-box;\">Plain Box</li>\r\n</ul>', 'song1.jpg', 'Sony Alpha a58 - DSLR Camera with 18-55mm Lens - Black (Brand Warranty)'),
 (17, 7, 4, 'Samsung Original Gear S3', 2900, '<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 8.5px; color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Brand New Sealed Box current manufacturing</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Original Samsung Product</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Compatible with Android and Iphone</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">768 MB Ram 4 GB rom with Tizen OS</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">SMS, email, apps and incoming call notifications</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">GPS, NFC, BT version 4.2</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">Accelerometer, Barometer, Gyro Sensor, HR Sensor, Light Sensor</span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bold;\">1.3\" 360x360 Pixels Super AMOLED Display</span></li>\r\n</ul>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\">Top features:</span><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><span style=\"color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">- Always-on display gives the look of a traditional watch&nbsp;</span><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><span style=\"color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">- Turn the bezel to answer calls, adjust controls and open apps&nbsp;</span><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><span style=\"color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12px;\">- Make calls from your wrist for hands-free convenience&nbsp;</span><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><br style=\"box-sizing: border-box; font-size: 12px; color: #222222; font-family: Helvetica, Arial, sans-serif;\" /><span style=\"color: #606060; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 12', 'samsung2 (2).jpg', 'Samsung Original Gear S3 Classic 46 MM 4GB Rom Box packed - Silver&Black');
-
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `brands`
@@ -165,7 +184,7 @@ ALTER TABLE `brands`
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`p_id`);
+  ADD KEY `p_id` (`p_id`);
 
 --
 -- Indexes for table `categories`
@@ -183,36 +202,55 @@ ALTER TABLE `customers`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`pro_id`);
+  ADD PRIMARY KEY (`pro_id`),
+  ADD KEY `pro_brand` (`pro_brand`),
+  ADD KEY `pro_cat` (`pro_cat`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `brands`
 --
 ALTER TABLE `brands`
   MODIFY `brand_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
   MODIFY `cust_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `pro_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-COMMIT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`p_id`) REFERENCES `products` (`pro_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`pro_brand`) REFERENCES `brands` (`brand_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`pro_cat`) REFERENCES `categories` (`cat_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

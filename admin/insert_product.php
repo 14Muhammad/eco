@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"><!--offset-md-2 col-md-8              class='col-lg-12'-->
     <div class="offset-md-2 col-md-8">
         <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group row">
@@ -52,14 +52,16 @@
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_price">Product Price</label>
-                <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price">
+                <div  class="col-12 col-sm-8 col-lg-9">
+                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price" required
+                    pattern="[1-9][0-9]*">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_desc">Product Description</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <textarea class="form-control"  name="pro_desc" id="pro_desc" rows="4" placeholder="Product Description"></textarea>
+                    <textarea class="form-control"  name="pro_desc" id="pro_desc" rows="4" placeholder="Product Description" required
+                              pattern=".+"></textarea>
                 </div>
             </div>
             <div class="form-group row">
