@@ -1,99 +1,57 @@
-<?php include("functions.php"); ?>
-<html lang="en">
-<head>
-    <title>Ecommerce</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width, initialscale=1">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
-    <div>
-        <a href="index.php"><img id="logo" style=" height:150px " src="../images/logo.jpg"></a>
-        <img id="banner" src="../images/banner.gif"style=" height:150px;width:800px ">
-    </div>
-    <div>
-        <div class="form-group" id="form" >
-            <form class="navbar-form" method="get" action="results.php">
-                <input type="text" class="form-control-range" name="user_query" placeholder="Search products">
-                <input class="btn btn-success btn-block" type="submit" class="form-control" name="search" value="Search" >
-            </form>
-        </div>
-    </div>
-    <div id="content_area">
-        <div class="container">
-            <?php cart(); ?>
-            <span style="float: right;
-                    font-size: 18px; padding: 5px;line-height: 40px;">
-                        <?php
-                        if(!isset($_SESSION['customer_email']))
-                            echo "Welcome guest!";
-                        else
-                            echo "Welcome ".$_SESSION['customer_email'];
-                        ?>
-                <b style="color: yellow">
-                            Shopping Cart - </b>
-                        Total Items: <?php total_items(); ?>
-                Total Price: <?php total_price(); ?>
-                <a style="color: yellow" href="cart.php">Go to Cart</a>
-
-                <?php
-                if(!isset($_SESSION['customer_email'])){
-                    echo "<a style='color: orange;' href='checkout.php'>Login</a>";
-                }
-                else{
-                    echo "<a style='color: orange;' href='logout.php'>Logout</a>";
-                }
-                ?>
-                    </span>
-        </div>
-        <div class="products_box">
-            <?php getPro('all_products'); ?>
-        </div>
-
-    </div>
-</div>
-
-</div>
-<br><br>
-<footer class="bg-warning text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                This is footer powered by <kbd>Farasat Ali Aziz</kbd>
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
-
-
-<!--
+<?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
+?>
 <div class="row">
-    <div class="col-sm-6 offset-sm-3 jumbotron text-center ">
-        <h1>Products </h1>
-        <ul class="list-group ">
-   <php
-            $get_products = "select * from products";
-            $run_products = mysqli_query($con, $get_products);
-            while ($row_products= mysqli_fetch_array($run_products)){
-                $pro_id = $row_products['pro_id'];
-                $pro_title = $row_products['pro_title'];
-                $pro_brand = $row_products['pro_brand'];
-                $pro_cat = $row_products['pro_cat'];
-                $pro_price = $row_products['pro_price'];
-                $pro_desc = $row_products['pro_desc'];
-                $pro_image= $row_products['pro_image'];
-                $pro_keywords = $row_products['pro_keywords'];
-
-                echo "<li class='list-group-item'>$pro_title</li>";
-				echo "<li class='list-group-item'>$pro_image</li>";
-
-
+    <div class="col-sm-12">
+        <h1>Products</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $get_pro = "select * from products";
+            $run_pro = mysqli_query($con,$get_pro);
+            $count_pro = mysqli_num_rows($run_pro);
+            if($count_pro==0){
+                echo "<h2> No Product found in selected criteria </h2>";
+            }
+            else {
+                $i = 0;
+                while ($row_pro = mysqli_fetch_array($run_pro)) {
+                    $pro_id = $row_pro['pro_id'];
+                    $pro_cat = $row_pro['pro_cat'];
+                    $pro_brand = $row_pro['pro_brand'];
+                    $pro_title = $row_pro['pro_title'];
+                    $pro_price = $row_pro['pro_price'];
+                    $pro_image = $row_pro['pro_image'];
+                    ?>
+                    <tr>
+                        <th scope="row"><?php echo ++$i; ?></th>
+                        <td><?php echo $pro_title; ?></td>
+                        <td><img class="img-thumbnail" src='product_images/<?php echo $pro_image;?>' width='80' height='80'></td>
+                        <td><?php echo $pro_price; ?>/-</td>
+                        <td><a href="index.php?edit_pro=<?php echo $pro_id?>" class="btn btn-primary">
+                                <i class="fa fa-edit"></i> Edit
+                            </a>
+                            <a href="index.php?del_pro=<?php echo $pro_id?>" class="btn btn-danger">
+                                <i class="fa fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <?php
+                }
             }
             ?>
-        </ul>
+            </tbody>
+        </table>
     </div>
 </div>
--->
