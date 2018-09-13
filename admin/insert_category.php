@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
+?>
 <div class="row">
     <div class="offset-md-2 col-md-8">
         <form action="" method="post" enctype="multipart/form-data">

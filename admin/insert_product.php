@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
+?>
 <div class="row">
     <div class="offset-md-2 col-md-8">
         <form action="" method="post" enctype="multipart/form-data">
@@ -7,14 +12,15 @@
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">Product Title</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title">
+                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title"
+                           pattern="\w+" required>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_cat">Product Category</label>
                 <div class="col-12 col-sm-8 col-lg-9">
                     <select name="pro_cat" id="pro_cat" required class="form-control">
-                        <option>Select Category</option>
+                        <option selected>Select Category</option>
                         <?php
                         $get_cats = "select * from categories";
                         $run_cats = mysqli_query($con, $get_cats);
@@ -47,7 +53,7 @@
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_image">Product Image</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control-file" type="file" id="pro_image" name="pro_image">
+                    <input class="form-control-file" type="file" id="pro_image" name="pro_image" required>
                 </div>
             </div>
             <div class="form-group row">
