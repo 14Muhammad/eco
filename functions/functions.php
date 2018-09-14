@@ -25,7 +25,7 @@ function getBrands(){
     }
 }
 
-function getPro($flag = ''){
+function getPro($flag = '',$search_pro=''){
     global $con;
     $get_pro = "";
     if(!isset($_GET['cat']) && !isset($_GET['brand']) && !isset($_GET['search'])) {
@@ -39,9 +39,14 @@ function getPro($flag = ''){
     } else if(isset($_GET['brand'])){
         $pro_brand_id = $_GET['brand'];
         $get_pro = "select * from products where pro_brand = '$pro_brand_id'";
-    } else if(isset($_GET['search'])){
-        $search_query = $_GET['user_query'];
-        $get_pro = "select * from products where pro_keywords like '%$search_query%'";
+    } else if(isset($_GET['search']) || $search_pro != ''){
+        $search_query = '';
+        if($search_pro == '')
+            $search_query = $_GET['user_query'];
+        else {
+            $search_query = $search_pro;
+            $get_pro = "select * from products where pro_keywords like '%$search_query%'";
+        }
     }
     $run_pro = mysqli_query($con,$get_pro);
     $count_pro = mysqli_num_rows($run_pro);
@@ -57,8 +62,8 @@ function getPro($flag = ''){
         $pro_image = $row_pro['pro_image'];
         echo "
                 <div class='single_product'>
-                    <h3>$pro_title</h3>
-                    <img src='admin/product_images/$pro_image' width='180' height='180'>
+                    <h3 class='h6'>$pro_title</h3>
+                    <img src='admin/product_images/$pro_image' class='img-thumbnail zoom' width='180' height='180'>
                     <p> <b> Rs $pro_price/-  </b> </p>
                     <a href='details.php?pro_id=$pro_id' style='float: left'>Details</a>
                     <a href='index.php?add_cart=$pro_id'><button style='float: right;'>Add to Cart</button></a>

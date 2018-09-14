@@ -7,15 +7,36 @@ require "functions/functions.php";
 <head>
     <meta charset="UTF-8">
     <title>My Online Shop</title>
+    <link rel="stylesheet" type="text/css" href="admin/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <script>
+        function check_input(q){
+            console.log(q);
+            if(q == ''){
+                document.getElementById('products_box').innerHTML = '';
+            }
+            else {
+                var http = new XMLHttpRequest();
+                http.onreadystatechange = function () {
+                    if (http.readyState == 4 && http.status == 200){
+                        document.getElementById('products_box').innerHTML = http.responseText;
+                    }
+                }
+                http.open('get','search_products.php?pro=' + q);
+                http.send();
+            }
+        }
+
+
+    </script>
 </head>
 <body>
-    <div class="main_wrapper">
+    <div class="main_wrapper" class="container">
         <div class="header_wrapper">
             <a href="index.php"><img id="logo" src="images/logo.jpg"></a>
             <img id="banner" src="images/banner.gif">
         </div>
-        <div class="menubar">
+        <div class="menubar" class="container">
             <ul id="menu">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="all_products.php">All Products</a></li>
@@ -26,8 +47,11 @@ require "functions/functions.php";
             </ul>
             <div id="form">
                 <form method="get" action="results.php">
-                    <input type="text" name="user_query" placeholder="Search products">
-                    <input type="submit" name="search" value="Search">
+                   <div class="row">
+                       <input type="text" name="user_query" onkeyup="check_input(this.value)" placeholder="Search products">
+                       <input type="submit" name="search" value="Search">
+
+                   </div>
                 </form>
             </div>
         </div>
@@ -42,7 +66,7 @@ require "functions/functions.php";
                     <?php getBrands(); ?>
                 </ul>
             </div>
-            <div id="content_area">
+            <div id="content_area"     style="background-color: #9E9E9E;">
                 <div class="shopping_cart">
                     <?php cart(); ?>
                     <span style="float: right;
@@ -69,14 +93,14 @@ require "functions/functions.php";
                         ?>
                     </span>
                 </div>
-                <div class="products_box">
+                <div id="products_box" class="products_box" class="img-thumbnail zoom">
                     <?php getPro(); ?>
                 </div>
 
             </div>
         </div>
         <div id="footer">
-            <h2> &copy; 2018 by Muhammad Ali Makhdoom</h2>
+            <h2> &copy; 2018 by Muhammad ali Makhdoom</h2>
         </div>
     </div>
 </body>
