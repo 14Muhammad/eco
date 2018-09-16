@@ -1,3 +1,4 @@
+<body>
 <?php
 if(!isset($_SESSION['user_email'])){
     header('location: login.php?not_admin=You are not Admin!');
@@ -12,8 +13,9 @@ if(!isset($_SESSION['user_email'])){
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">Product Title</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_title" name="pro_title" placeholder="Title"
-                           pattern="\w+" required>
+                    <input class="form-control"  type="text" id="pro_title" name="pro_title"
+                           placeholder="Title">
+
                 </div>
             </div>
             <div class="form-group row">
@@ -53,13 +55,16 @@ if(!isset($_SESSION['user_email'])){
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_image">Product Image</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control-file" type="file" id="pro_image" name="pro_image" required>
+                    <input onkeyup="chkimage(this.value)" class="form-control-file" type="file" id="pro_image" name="pro_image"
+                           required>
+                    <span id="image"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_price">Product Price</label>
                 <div class="col-12 col-sm-8 col-lg-9">
-                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price">
+                    <input class="form-control" type="text" id="pro_price" name="pro_price" placeholder="Product Price" required
+                           pattern="[1-9][0-9]*">
                 </div>
             </div>
             <div class="form-group row">
@@ -83,6 +88,22 @@ if(!isset($_SESSION['user_email'])){
         </form>
     </div>
 </div>
+<script>
+    function chkimage(proimg) {
+        if(proimg==''){
+            document.getElementById('image').innerText='';
+        }
+        else{
+            var http=new XMLHttpRequest();
+            http.onreadystatechange=function () {
+                if(http.readyState==4&&http.status==200){
+                    document.getElementById('image').innerText=http.responseText;
+                }
+            }
+            http.open('get','chktitle.php?i='+proimg)
+        }
+    }
+</script>
 <?php
 if(isset($_POST['insert_post'])){
     //getting text data from the fields
@@ -107,3 +128,4 @@ if(isset($_POST['insert_post'])){
 }
 
 ?>
+</body>
