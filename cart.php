@@ -42,7 +42,7 @@ require "functions/functions.php";
                     <?php getBrands(); ?>
                 </ul>
             </div>
-            <div id="content_area">
+            <div id="content_area"  style = "background-color: #9E9E9E;">
                 <?php
                 global $con;
                 $ip = getIp();

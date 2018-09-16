@@ -33,11 +33,11 @@ if(isset($_POST['login']))
             </tr>
             <tr>
                 <td align="right"><b>Email: </b></td>
-                <td><input type="text" name="email"  placeholder="Enter email" required></td>
+                <td><input class="form-control" type="text" name="email"  placeholder="Enter email" required></td>
             </tr>
             <tr>
                 <td align="right"><b>Password:</b></td>
-                <td><input type="password" name="pass" placeholder="Enter password" required></td>
+                <td><input class="form-control" type="password" name="pass" placeholder="Enter password" required></td>
             </tr>
             <tr align="center">
                 <td colspan="2"><a href="checkout.php?forgot_pass">Forgot Password? </a></td>

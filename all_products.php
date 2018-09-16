@@ -8,6 +8,7 @@ require "functions/functions.php";
     <meta charset="UTF-8">
     <title>My Online Shop</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="admin/assets/css/bootstrap.min.css">
 </head>
 <body>
     <div class="main_wrapper">
@@ -42,7 +43,7 @@ require "functions/functions.php";
                     <?php getBrands(); ?>
                 </ul>
             </div>
-            <div id="content_area">
+            <div id="content_area"  style="background-color: #9E9E9E;">
                 <div class="shopping_cart">
                     <?php cart(); ?>
                     <span style="float: right;

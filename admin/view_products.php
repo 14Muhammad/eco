@@ -3,6 +3,10 @@ if(!isset($_SESSION['user_email'])){
     header('location: login.php?not_admin=You are not Admin!');
 }
 ?>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="admin/assets/css/bootstrap.min.css">
+</head>
 <div class="row">
     <div class="col-sm-12">
         <h1>Products</h1>
@@ -37,7 +41,7 @@ if(!isset($_SESSION['user_email'])){
                     <tr>
                         <th scope="row"><?php echo ++$i; ?></th>
                         <td><?php echo $pro_title; ?></td>
-                        <td><img class="img-thumbnail" src='product_images/<?php echo $pro_image;?>' width='80' height='80'></td>
+                        <td><img class="img-thumbnail zoom" src='product_images/<?php echo $pro_image;?>' width='80' height='80'></td>
                         <td><?php echo $pro_price; ?>/-</td>
                         <td><a href="index.php?edit_pro=<?php echo $pro_id?>" class="btn btn-primary">
                                 <i class="fa fa-edit"></i> Edit

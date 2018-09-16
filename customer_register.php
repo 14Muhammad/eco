@@ -41,6 +41,7 @@ if(isset($_POST['register'])){
     <meta charset="UTF-8">
     <title>My Online Shop</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" type="text/css" href="admin/assets/css/bootstrap.min.css">
 </head>
 <body>
     <div class="main_wrapper">
@@ -88,31 +89,31 @@ if(isset($_POST['register'])){
                     </span>
                 </div>
 
-                    <form action="customer_register.php" method="post" enctype="multipart/form-data">
+                    <form action="customer_register.php" method="post"    style="background: gray;" enctype="multipart/form-data">
                         <table align="center" width="750">
                             <tr align="center">
-                                <td colspan="3"><h2>create an Account </h2></td>
+                                <td colspan="3"><h2 class="h6">create an Account </h2></td>
                             </tr>
                             <tr>
                                 <td align="right">Name: </td>
-                                <td><input name="c_name" required></td>
+                                <td><input class="form-control" name="c_name" required></td>
                             </tr>
                             <tr>
                                 <td align="right">Email: </td>
-                                <td><input name="c_email" required></td>
+                                <td><input class="form-control" name="c_email" required></td>
                             </tr>
                             <tr>
                                 <td align="right">Password: </td>
-                                <td><input type="password" name="c_pass" required></td>
+                                <td><input class="form-control" type="password" name="c_pass" required></td>
                             </tr>
                             <tr>
                                 <td align="right">Image: </td>
-                                <td><input type="file" name="c_image" required></td>
+                                <td><input   class="btn btn-primary" type="file" name="c_image" required></td>
                             </tr>
                             <tr>
-                                <td align="right">Country: </td>
+                                <td  align="right">Country: </td>
                                 <td>
-                                    <select name="c_country">
+                                    <select  class="btn btn-primary" name="c_country">
                                         <option>Select a Country </option>
                                         <option>Afghanistan </option>
                                         <option>Pakistan</option>
@@ -123,18 +124,18 @@ if(isset($_POST['register'])){
                             </tr>
                             <tr>
                                 <td align="right">City: </td>
-                                <td><input name="c_city" required></td>
+                                <td><input class="form-control" name="c_city" required></td>
                             </tr>
                             <tr>
                                 <td align="right">Contact: </td>
-                                <td><input name="c_contact" required pattern=".*"></td>
+                                <td><input class="form-control" name="c_contact" required pattern=".*"></td>
                             </tr>
                             <tr>
                                 <td align="right">Address: </td>
-                                <td><input name="c_address" required></td>
+                                <td><input class="form-control" name="c_address" required></td>
                             </tr>
                             <tr align="center">
-                                <td colspan="3"><input type="submit" name="register" value="Create Account"></td>
+                                <td colspan="3"><input style="float:right" class="btn btn-primary" type="submit" name="register" value="Create Account"></td>
                             </tr>
                         </table>
 
