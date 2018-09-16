@@ -99,7 +99,10 @@ if(isset($_POST['register'])){
                             </tr>
                             <tr>
                                 <td align="right">Email: </td>
-                                <td><input name="c_email" required></td>
+                                <td>
+                                    <input name="c_email" onkeyup="checkEmail(this.value)" required>
+                                    <span id="hint"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td align="right">Password: </td>
@@ -147,5 +150,22 @@ if(isset($_POST['register'])){
             <h2> &copy; 2018 by Muhammad Ali Makhdoom</h2>
         </div>
     </div>
+    <script>
+        function checkEmail(email) {
+            if(email==''){
+                document.getElementById('hint').innerHTML = "";
+            }
+            else {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById('hint').innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "check_email.php?e="+email);
+                xhttp.send();
+            }
+        }
+    </script>
 </body>
 </html>
