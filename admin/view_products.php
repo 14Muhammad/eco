@@ -1,59 +1,57 @@
+<?php
+if(!isset($_SESSION['user_email'])){
+    header('location: login.php?not_admin=You are not Admin!');
+}
+?>
 <div class="row">
-    <div class="offset-md-2 col-md-8">
-
-           <h2>All Products</h2>
-             <p>The .table-striped class adds zebra-stripes to a table:</p>
-               <table class="table table-striped">
-                    <thead>
+    <div class="col-sm-12">
+        <h1>Products</h1>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $get_pro = "select * from products";
+            $run_pro = mysqli_query($con,$get_pro);
+            $count_pro = mysqli_num_rows($run_pro);
+            if($count_pro==0){
+                echo "<h2> No Product found in selected criteria </h2>";
+            }
+            else {
+                $i = 0;
+                while ($row_pro = mysqli_fetch_array($run_pro)) {
+                    $pro_id = $row_pro['pro_id'];
+                    $pro_cat = $row_pro['pro_cat'];
+                    $pro_brand = $row_pro['pro_brand'];
+                    $pro_title = $row_pro['pro_title'];
+                    $pro_price = $row_pro['pro_price'];
+                    $pro_image = $row_pro['pro_image'];
+                    ?>
                     <tr>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Keyword</th>
-
-                </tr>
-                </thead>
-                <tbody>
-
-        <?php
-        $get_products = "select * from products";
-        $run_products = mysqli_query($con, $get_products);
-        while($row_products= mysqli_fetch_array($run_products)) {
-            $pro_id= $row_products['pro_id'];
-            $pro_cat = $row_products['pro_cat'];
-            $pro_brand = $row_products['pro_brand'];
-            $pro_title = $row_products['pro_title'];
-            $pro_price= $row_products['pro_price'];
-            $pro_desc = $row_products['pro_desc'];
-            $pro_image = $row_products['pro_image'];
-            $pro_keywords = $row_products['pro_keywords'];
-            echo "<tr>
-                 
-                      <td>$pro_title</td>
-                      <td>$pro_price</td>
-                      <td>$pro_desc</td>
-                      <td><img src='product_images/$pro_image' width='50px' height='50px'></td>
-                      <td>$pro_keywords</td>
-                  
-                     
-                         <td> <a type='button' class='btn btn-primary  a-btn-slide-text' href='delete.php?delete=$pro_id'>Delete   
-                                     
-                            </a></td>
-                           
-                 <!--           <td  <a href=\"#\" class=\"btn btn-primary a-btn-slide-text\">
-                               <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>
-                                <span><strong>Edit</strong></span>
-                                         
+                        <th scope="row"><?php echo ++$i; ?></th>
+                        <td><?php echo $pro_title; ?></td>
+                        <td><img class="img-thumbnail" src='product_images/<?php echo $pro_image;?>' width='80' height='80'></td>
+                        <td><?php echo $pro_price; ?>/-</td>
+                        <td><a href="index.php?edit_pro=<?php echo $pro_id?>" class="btn btn-primary">
+                                <i class="fa fa-edit"></i> Edit
                             </a>
-                         </td> -->
-                  </tr>";
-        }
-        ?>
-        </tbody>
-    </table>
-
+                            <a href="index.php?del_pro=<?php echo $pro_id?>" class="btn btn-danger">
+                                <i class="fa fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            }
+            ?>
+            </tbody>
+        </table>
     </div>
 </div>
-x
-

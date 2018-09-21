@@ -14,17 +14,6 @@ include ('functions/db_connect.php')
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <title>E-commerce Admin Panel</title>
         <title>Admin Panel</title>
-
-        <style>
-            input[id="cat"]:invalid
-            {
-                background-color: red;
-            }
-            input[id="brands"]:invalid
-            {
-                background-color: red;
-            }
-            </style>
     </head>
     <body>
         <div class="wrapper">
@@ -90,15 +79,6 @@ include ('functions/db_connect.php')
                         }
                         else if(isset($_GET['view_brands'])) {
                             include('view_brands.php');
-                        }
-                        else if(isset($_GET['insert_category'])) {
-                            include('insert_category.php');
-                        }
-                        else if(isset($_GET['insert_brand'])) {
-                            include('insert_brand.php');
-                        }
-                        else if(isset($_GET['view_products'])) {
-                            include('view_products.php');
                         }
                         ?>
                 </div>
