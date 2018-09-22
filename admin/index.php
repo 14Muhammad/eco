@@ -123,6 +123,15 @@ if(!isset($_SESSION['user_email'])){
                         else if(isset($_GET['view_customers'])){
                             include ('view_customers.php');
                         }
+                        else if(isset($_GET['detail_cust'])){
+                            include ('details.php');
+                        }
+
+
+                        else if(isset($_GET['edit_cust'])){
+                            include ('edit_cust.php');
+                        }
+
                         else if(isset($_GET['del_customer'])){
                             include ('del_customer.php');
                         }

@@ -37,7 +37,15 @@ if(!isset($_SESSION['user_email'])){
                         <td><?php echo $cust_name; ?></td>
                         <td><?php echo $cust_email; ?></td>
                         <td><img class="img-thumbnail" src='../customer/customer_images/<?php echo $cust_image;?>' width='80' height='80'></td>
-                        <td><a href="index.php?del_customer=<?php echo $cust_id?>" class="btn btn-danger">
+                        <td> <a href="index.php?detail_cust=<?php echo $cust_id?>" class="btn btn-secondary">
+                                <i class="fas fa-id-badge"></i> Details
+                            </a>
+
+
+                            <a href="index.php?edit_cust=<?php echo $cust_id?>" class="btn btn-primary">
+                                <i class="fa fa-edit"></i> Edit
+                            </a>
+                            <a href="index.php?del_customer=<?php echo $cust_id?>" class="btn btn-danger">
                                 <i class="fa fa-trash-alt"></i> Delete
                             </a>
                         </td>
