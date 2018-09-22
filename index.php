@@ -6,6 +6,7 @@ require "functions/functions.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Online Shop</title>
     <link rel="stylesheet" type="text/css" href="admin/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
@@ -31,19 +32,21 @@ require "functions/functions.php";
     </script>
 </head>
 <body>
-    <div class="main_wrapper" class="container">
+    <div class="main_wrapper" >
         <div class="header_wrapper">
-            <a href="index.php"><img id="logo" src="images/logo.jpg"></a>
-            <img id="banner" src="images/banner.gif">
+                <a href="index.php"><img class="col-sm-9" id="logo" src="images/logo.jpg"></a>
+                <img class="row-md-9" id="banner" src="images/banner.gif">
+
         </div>
         <div class="menubar" class="container">
-            <ul id="menu">
+            <ul id="menu" class="col-sm-12">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="all_products.php">All Products</a></li>
                 <li><a href="my_account.php">My Account</a></li>
                 <li><a href="#">Sign Up</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="#">Contact Us</a></li>
+
             </ul>
             <div id="form">
                 <form method="get" action="results.php">
@@ -55,7 +58,7 @@ require "functions/functions.php";
                 </form>
             </div>
         </div>
-        <div class="content_wrapper">
+        <div class="content_wrapper" class="col-md-9">
             <div id="sidebar">
                 <div class="sidebar_title">Categories </div>
                 <ul class="cats">
@@ -67,7 +70,7 @@ require "functions/functions.php";
                 </ul>
             </div>
             <div id="content_area"     style="background-color: #9E9E9E;">
-                <div class="shopping_cart">
+                <div class="shopping_cart" class="col-sm-9">
                     <?php cart(); ?>
                     <span style="float: right;
                     font-size: 18px; padding: 5px;line-height: 40px;">
@@ -93,7 +96,7 @@ require "functions/functions.php";
                         ?>
                     </span>
                 </div>
-                <div id="products_box" class="products_box" class="img-thumbnail zoom">
+                <div id="products_box" class="col-sm-12" class="products_box" class="img-thumbnail zoom">
                     <?php getPro(); ?>
                 </div>
 
