@@ -126,6 +126,9 @@ if(!isset($_SESSION['user_email'])){
                         else if(isset($_GET['del_customer'])){
                             include ('del_customer.php');
                         }
+                        else if(isset($_GET['view_orders'])){
+                            include ('view_orders.php');
+                        }
 
 
                         ?>
