@@ -22,6 +22,8 @@ if(isset($_POST['login'])){
         }
         header('location:index.php?logged_in=You have successfully logged in!');
     }
+
+    
 }
 ?>
 <!DOCTYPE html>

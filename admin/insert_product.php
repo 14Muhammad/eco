@@ -16,6 +16,8 @@ if(!isset($_SESSION['user_email'])){
                     <input class="form-control"  type="text" id="pro_title" name="pro_title"
                            placeholder="Title">
 
+
+
                 </div>
             </div>
             <div class="form-group row">

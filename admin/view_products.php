@@ -23,6 +23,9 @@ if(!isset($_SESSION['user_email'])){
             $count_pro = mysqli_num_rows($run_pro);
             if($count_pro==0){
                 echo "<h2> No Product found in selected criteria </h2>";
+
+
+
             }
             else {
                 $i = 0;
