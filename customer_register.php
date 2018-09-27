@@ -100,7 +100,7 @@ if(isset($_POST['register'])){
                             <tr>
                                 <td align="right">Email: </td>
                                 <td>
-                                    <input name="c_email" onkeyup="checkEmail(this.value)" required>
+                                    <input name="c_email" onkeyup="checkEmail(this.value);" required>
                                     <span id="hint"></span>
                                 </td>
                             </tr>

@@ -71,6 +71,11 @@ if(!isset($_SESSION['user_email'])){
                         <a href="logout.php">
                             <i class="fa fa-sign-out-alt"></i> Admin logout</a>
                     </li>
+                    <li>
+                        <a href="index.php?add_admin">
+                            <i class="fas fa-plus"></i> Add Admin
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div id="content">
@@ -125,6 +130,9 @@ if(!isset($_SESSION['user_email'])){
                         }
                         else if(isset($_GET['del_customer'])){
                             include ('del_customer.php');
+                        }
+                        else if(isset($_GET['add_admin'])){
+                            include ('add_admin.php');
                         }
 
 
