@@ -7,8 +7,7 @@ if(isset($_POST['login'])){
     $pass = $_POST['user_pass'];
     $sel_user = "select * from admins where user_email='$email' AND user_pass='$pass'";
     $run_user = mysqli_query($con, $sel_user);
-    $check_user = mysqli_num_rows($run_user);
-    if($check_user==0){
+    if(mysqli_num_rows($run_user)==0){
         $error_msg = 'Password or Email is wrong, try again';
     }
     else{
@@ -55,7 +54,12 @@ if(isset($_POST['login'])){
 <script src="assets/js/jquery-3.3.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
+<<<<<<< HEAD
+
+</html>
+=======
 </html>
 
 
 
+>>>>>>> upstream/master
