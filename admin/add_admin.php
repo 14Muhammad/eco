@@ -11,7 +11,7 @@
                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                 </div>
             </div>
-            <div class="form-group row">
+            <div  class="form-group row">
                 <label class="col-form-label col-sm-4 col-lg-3 d-none d-sm-block" for="pro_title">New Admin Password</label>
                 <div class="col-12 col-sm-8 col-lg-9">
                     <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password..."
